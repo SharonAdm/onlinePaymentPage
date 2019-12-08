@@ -1,0 +1,21 @@
+#inputCardNumber {
+  width: 4em;
+  margin: 5px;
+}
+
+.container {
+  text-align: right;
+}
+
+#inputPassword{
+    width: 12em;
+}
+
+#inputCVV{
+  width: 4em;
+}
+
+#inputDate {
+  width: 4em;
+  margin: 5px;
+}
