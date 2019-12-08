@@ -25,15 +25,6 @@ class Date extends Component {
               maxLength="2"
               placeholder="ماه"
             ></input>
-            <p>_</p>
-            <input
-              className="form-control"
-              id="inputDate"
-              type="text"
-              placeholder="xx"
-              maxLength="2"
-              placeholder="روز"
-            ></input>
           </div>
         </form>
       </div>
