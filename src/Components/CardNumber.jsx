@@ -5,7 +5,7 @@ class CardNumber extends Component {
   render() {
     return (
       <div className="container">
-        <label for="cardNumber">:شماره کارت</label>
+        <label htmlFor="cardNumber">:شماره کارت</label>
         <form className="form-inline">
           <div className="form-group">
             <input

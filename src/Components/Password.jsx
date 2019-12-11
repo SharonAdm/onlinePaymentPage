@@ -7,7 +7,7 @@ class Password extends Component {
       <div className="container">
         <form className="form-horizontal">
           <div className="form-group">
-            <label for="password">:رمز دوم اینترنتی</label>
+            <label htmlFor="password">:رمز دوم اینترنتی</label>
             <input
               className="form-control"
               id="inputPassword"

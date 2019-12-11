@@ -7,7 +7,7 @@ class SecurityCode extends Component {
       <div className="container">
         <form className="form-horizontal">
           <div className="form-group">
-            <label for="securityCode"> :CVV2</label>
+            <label htmlFor="securityCode"> :CVV2</label>
             <input
               className="form-control"
               id="inputCVV"

@@ -7,7 +7,7 @@ class Email extends Component {
       <div className="container">
         <form className="form-horizontal">
           <div className="form-group">
-            <label for="email">:آدرس پست الکترونیکی (اختیاری)</label>
+            <label htmlFor="email">:آدرس پست الکترونیکی (اختیاری)</label>
             <input
               className="form-control"
               id="inputEmail"

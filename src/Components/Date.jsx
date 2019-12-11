@@ -5,7 +5,7 @@ class Date extends Component {
   render() {
     return (
       <div className="container">
-        <label for="email">: تاریخ انقضا کارت</label>
+        <label htmlFor="email">: تاریخ انقضا کارت</label>
         <form className="form-inline">
           <div className="form-group">
             <input
