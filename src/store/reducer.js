@@ -1,11 +1,11 @@
 const initialState = {
-  cardInfo:{
-    cardNo= "",
-    expDate="",
-    pass="",
-    cvv2=""
+  cardInfo: {
+    cardNo: "",
+    expDate: "",
+    pass: "",
+    cvv2: ""
   },
-  emailAdd=""
+  emailAdd: ""
 };
 
 const reducer = (state = initialState, action) => {
