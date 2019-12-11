@@ -1,17 +1,16 @@
 #inputCardNumber {
-  width: 4em;
-  margin: 5px;
+  width: 16em;
 }
 
 .container {
   text-align: right;
 }
 
-#inputPassword{
-    width: 12em;
+#inputPassword {
+  width: 12em;
 }
 
-#inputCVV{
+#inputCVV {
   width: 4em;
 }
 
@@ -19,6 +18,19 @@
   width: 4em;
   margin: 5px;
 }
- button{
+
+#inputEmail {
+  width: 30em;
+}
+
+button {
   margin-right: 500px;
- }
+}
+
+.form-group {
+  text-align: right;
+}
+
+::placeholder {
+  text-align: center;
+}
