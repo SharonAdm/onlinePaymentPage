@@ -12,8 +12,7 @@ class Date extends Component {
               className="form-control"
               id="inputDate"
               type="text"
-              placeholder="xxxx"
-              maxLength="4"
+              maxLength="2"
               placeholder="سال"
             ></input>
             <p>_</p>
@@ -21,7 +20,6 @@ class Date extends Component {
               className="form-control"
               id="inputDate"
               type="text"
-              placeholder="xx"
               maxLength="2"
               placeholder="ماه"
             ></input>
