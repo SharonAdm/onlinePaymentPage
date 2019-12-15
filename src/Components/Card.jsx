@@ -10,17 +10,52 @@ import Date from "./Date";
 class Card extends Component {
   render() {
     return (
-      <div>
-        <CardNumber />
-        <Password />
-        <SecurityCode />
-        <Date />
-        <Email />
-        <div className="col-lg-10">
-          <button type="submit" class="btn btn-success">
-            پرداخت
-          </button>
-        </div>
+      <div className="container">
+        <form className="form">
+          <div className="form-group row">
+            
+            <label htmlFor="cardNumber" className="col-sm-2 col-form-label">
+              شماره کارت:
+            </label>
+            <div className="col-sm-10">
+              <CardNumber />
+            </div>
+
+            <label htmlFor="password" className="col-sm-2 col-form-label">
+              رمز اینترنتی:
+            </label>
+            <div className="col-sm-10">
+              <Password />
+            </div>
+
+            <label htmlFor="securityCode" className="col-sm-2 col-form-label">
+              CVV2:
+            </label>
+            <div className="col-sm-10">
+              <SecurityCode />
+            </div>
+
+            <label htmlFor="date" className="col-sm-2 col-form-label">
+              تاریخ انقضا کارت:
+            </label>
+            <div className="col-sm-10">
+              <Date />
+            </div>
+
+            <label htmlFor="email" className="col-sm-2 col-form-label">
+              آدرس ایمیل (انتخابی):
+            </label>
+            <div className="col-sm-10">
+              <Email />
+            </div>
+
+            <div className="col-lg-10">
+              <button type="submit" className="btn btn-md btn-success">
+                پرداخت
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }
