@@ -1,36 +1,62 @@
+body {
+  direction: rtl;
+}
+
 #inputCardNumber {
   width: 16em;
+  margin: 4px;
+  border: #3a5154 1px solid;
+  direction: ltr;
 }
 
-.container {
-  text-align: right;
-}
-
-#inputPassword {
-  width: 12em;
-}
-
-#inputCVV {
+#inputYear,
+#inputMonth {
   width: 4em;
+  float: right;
+  margin: 4px;
+  border: #3a5154 1px solid;
+  direction: ltr;
 }
 
-#inputDate {
-  width: 4em;
-  margin: 5px;
+#seperator{
+  float: right;
+  margin: 4px;
 }
 
 #inputEmail {
   width: 30em;
+  margin: 4px;
+  border: #3a5154 1px solid;
+  direction: ltr;
 }
 
-button {
-  margin-right: 500px;
+#inputPassword {
+  width: 12em;
+  margin: 4px;
+  border: #3a5154 1px solid;
+  direction: ltr;
 }
 
-.form-group {
-  text-align: right;
+#inputCVV {
+  width: 4em;
+  margin: 4px;
+  border: #3a5154 1px solid;
+  direction: ltr;
 }
 
 ::placeholder {
   text-align: center;
 }
+ .container{
+   border: #1d2625 1px solid;
+   border-radius: 25px;
+   background-color: #F7F4F3;
+ }
+
+ .App{
+   background-color: #3A506B;
+ }
+
+ html{
+   background-color: #3A506B;
+ }
