@@ -1,11 +1,17 @@
 const initialState = {
-  cardInfo: {
+  cardNo: null,
+  expDate: null,
+  pass: null,
+  cvv2: null,
+  emailAdd: null,
+
+  formErrors: {
     cardNo: "",
     expDate: "",
     pass: "",
-    cvv2: ""
-  },
-  emailAdd: ""
+    cvv2: "",
+    emailAdd: ""
+  }
 };
 
 const reducer = (state = initialState, action) => {
