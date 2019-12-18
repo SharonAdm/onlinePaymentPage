@@ -12,7 +12,7 @@ class Password extends Component {
         maxLength="12"
         name="passsword"
         type="password"
-        onChange={this.props.handelPassChange}
+        onChange={this.props.handlePassChange}
         noValidate
       ></input>
     );
@@ -21,7 +21,7 @@ class Password extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handelPassChange: event =>
+    handlePassChange: event =>
       dispatch({ type: "PASSCHANGE", value: event.target.value })
   };
 };

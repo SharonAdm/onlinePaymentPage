@@ -11,7 +11,7 @@ class Email extends Component {
         name="email"
         placeholder="example@email.com"
         type="email"
-        onChange={this.props.handelEmailChange}
+        onChange={this.props.handleEmailChange}
         noValidate
       ></input>
     );
@@ -20,7 +20,7 @@ class Email extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handelEmailChange: event =>
+    handleEmailChange: event =>
       dispatch({ type: "EMAILCHANGE", value: event.target.valye })
   };
 };

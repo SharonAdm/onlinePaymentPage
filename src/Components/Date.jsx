@@ -13,7 +13,7 @@ class Date extends Component {
           name="month"
           placeholder="ماه"
           type="text"
-          onChange={this.props.handelMonthChange}
+          onChange={this.props.handleMonthChange}
           noValidate
         ></input>
         <p id="seperator">_</p>
@@ -24,7 +24,7 @@ class Date extends Component {
           name="year"
           placeholder="سال"
           type="text"
-          onChange={this.props.handelYearChange}
+          onChange={this.props.handleYearChange}
           noValidate
         ></input>
       </div>
@@ -34,9 +34,9 @@ class Date extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handelYearChange: event =>
+    handleYearChange: event =>
       dispatch({ type: "YEARCHANGE", value: event.target.value }),
-    handelMonthChange: event =>
+    handleMonthChange: event =>
       dispatch({ type: "MONTHCHANGE", value: event.target.value })
   };
 };

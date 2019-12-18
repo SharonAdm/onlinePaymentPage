@@ -12,7 +12,7 @@ class CardNumber extends Component {
         name="cardNumber"
         placeholder="xxxx - xxxx - xxxx - xxxx"
         type="text"
-        onChange={this.props.handelCardNoChange}
+        onChange={this.props.handleCardNoChange}
         noValidate
       ></input>
     );
@@ -21,7 +21,7 @@ class CardNumber extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handelCardNoChange: event =>
+    handleCardNoChange: event =>
       dispatch({ type: "CARDNOCHANGE", value: event.target.value })
   };
 };

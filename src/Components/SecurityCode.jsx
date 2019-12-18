@@ -11,7 +11,7 @@ class SecurityCode extends Component {
         maxLength="4"
         name="securityCode"
         type="password"
-        onChange={this.props.handelSecurityCodeChange}
+        onChange={this.props.handleSecurityCodeChange}
         noValidate
       ></input>
     );
@@ -20,7 +20,7 @@ class SecurityCode extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handelSecurityCodeChange: event =>
+    handleSecurityCodeChange: event =>
       dispatch({
         type: "SECURITYCODECHANGE",
         value: event.target.value
