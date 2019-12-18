@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../style.css";
+import { connect } from "react-redux";
 
 class CardNumber extends Component {
   render() {
@@ -11,10 +12,25 @@ class CardNumber extends Component {
         name="cardNumber"
         placeholder="xxxx - xxxx - xxxx - xxxx"
         type="text"
+        onChange={this.props.handelCardNoChange}
         noValidate
       ></input>
     );
   }
 }
 
-export default CardNumber;
+const mapStateToProps = state => {
+  return {
+    cardNo: state.cardNo,
+    formErrors: state.formErrors
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handelCardNoChange: event =>
+      dispatch({ type: "CARDNOCHANGE", value: event.target.value })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardNumber);

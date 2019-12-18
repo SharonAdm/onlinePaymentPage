@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../style.css";
+import { connect } from "react-redux";
 
 class Date extends Component {
   render() {
@@ -12,6 +13,8 @@ class Date extends Component {
           name="month"
           placeholder="ماه"
           type="text"
+          onChange={this.props.handelMonthChange}
+          noValidate
         ></input>
         <p id="seperator">_</p>
         <input
@@ -21,10 +24,28 @@ class Date extends Component {
           name="year"
           placeholder="سال"
           type="text"
+          onChange={this.props.handelYearChange}
+          noValidate
         ></input>
       </div>
     );
   }
 }
 
-export default Date;
+const mapStateToProps = state => {
+  return {
+    expDate: state.expDate,
+    formErrors: state.formErrors
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handelYearChange: event =>
+      dispatch({ type: "YEARCHANGE", value: event.target.value }),
+    handelMonthChange: event =>
+      dispatch({ type: "MONTHCHANGE", value: event.target.value })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Date);

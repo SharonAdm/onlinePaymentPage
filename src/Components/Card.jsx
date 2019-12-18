@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "../style.css";
 
 import Email from "./Email";
@@ -7,13 +8,14 @@ import Password from "./Password";
 import SecurityCode from "./SecurityCode";
 import Date from "./Date";
 
+
 class Card extends Component {
+
   render() {
     return (
       <div className="container">
         <form className="form">
           <div className="form-group row">
-            
             <label htmlFor="cardNumber" className="col-sm-2 col-form-label">
               شماره کارت:
             </label>
@@ -61,4 +63,16 @@ class Card extends Component {
   }
 }
 
-export default Card;
+const mapStateToProps = state => {
+  return {
+    formErrors: state.formErrors
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSubmit: () => dispatch({type: "SUBMIT"})
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
