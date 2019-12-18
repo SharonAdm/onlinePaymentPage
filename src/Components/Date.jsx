@@ -32,13 +32,6 @@ class Date extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    expDate: state.expDate,
-    formErrors: state.formErrors
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     handelYearChange: event =>
@@ -48,4 +41,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Date);
+export default connect(null, mapDispatchToProps)(Date);

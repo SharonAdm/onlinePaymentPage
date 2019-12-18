@@ -18,13 +18,6 @@ class SecurityCode extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    cvv2: state.cvv2,
-    formErrors: state.formErrors
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     handelSecurityCodeChange: event =>
@@ -35,4 +28,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode);
+export default connect(null, mapDispatchToProps)(SecurityCode);

@@ -18,13 +18,6 @@ class Email extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    emailAdd: state.emailAdd,
-    formErrors: state.formErrors
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     handelEmailChange: event =>
@@ -32,4 +25,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Email);
+export default connect(null, mapDispatchToProps)(Email);

@@ -19,13 +19,6 @@ class Password extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    pass: state.pass,
-    formErrors: state.formErrors
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     handelPassChange: event =>
@@ -33,4 +26,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Password);
+export default connect(null, mapDispatchToProps)(Password);

@@ -19,13 +19,6 @@ class CardNumber extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    cardNo: state.cardNo,
-    formErrors: state.formErrors
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     handelCardNoChange: event =>
@@ -33,4 +26,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardNumber);
+export default connect(null, mapDispatchToProps)(CardNumber);
