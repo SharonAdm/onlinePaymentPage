@@ -22,7 +22,7 @@ class CardNumber extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     handleCardNoChange: event =>
-      dispatch({ type: "CARDNOCHANGE", value: event.target.value })
+      dispatch({ type: "CARDNOCHANGE", value: event.target.value, event: event })
   };
 };
 

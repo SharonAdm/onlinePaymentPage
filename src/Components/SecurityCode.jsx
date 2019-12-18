@@ -23,7 +23,8 @@ const mapDispatchToProps = dispatch => {
     handleSecurityCodeChange: event =>
       dispatch({
         type: "SECURITYCODECHANGE",
-        value: event.target.value
+        value: event.target.value,
+        event: event
       })
   };
 };

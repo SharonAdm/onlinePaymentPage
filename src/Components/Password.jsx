@@ -22,7 +22,7 @@ class Password extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     handlePassChange: event =>
-      dispatch({ type: "PASSCHANGE", value: event.target.value })
+      dispatch({ type: "PASSCHANGE", value: event.target.value, event: event })
   };
 };
 

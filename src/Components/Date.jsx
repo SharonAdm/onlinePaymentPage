@@ -35,9 +35,9 @@ class Date extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     handleYearChange: event =>
-      dispatch({ type: "YEARCHANGE", value: event.target.value }),
+      dispatch({ type: "YEARCHANGE", value: event.target.value, event: event }),
     handleMonthChange: event =>
-      dispatch({ type: "MONTHCHANGE", value: event.target.value })
+      dispatch({ type: "MONTHCHANGE", value: event.target.value, event: event })
   };
 };
 

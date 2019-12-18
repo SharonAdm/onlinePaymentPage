@@ -21,7 +21,7 @@ class Email extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     handleEmailChange: event =>
-      dispatch({ type: "EMAILCHANGE", value: event.target.valye })
+      dispatch({ type: "EMAILCHANGE", value: event.target.valye, event: event })
   };
 };
 
