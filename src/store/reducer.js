@@ -19,107 +19,155 @@ const numRegex = RegExp(/^[0-9]*$/);
 const mailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
+const monthRegex = RegExp(/^0[1-9]|1[0-2]$/);
+
+const formValid = ({ formErrors, ...rest }) => {
+  let valid = true;
+
+  Object.values(formErrors).forEach(val => {
+    if (val.length > 0) {
+      valid = false;
+    }
+  });
+
+  Object.values(rest).forEach(val => {
+    if (val === null) {
+      valid = false;
+    }
+  });
+
+  return valid;
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "CARDNOCHANGE": {
-      let value = "";
+      action.event.preventDefault();
 
-      if (action.value.legth < 16) {
-        state.formErrors.cardNo = "شماره کارت نامعتبر ";
-      }
-      if (!numRegex.test(action.value)) {
-        state.formErrors.cardNo = "شماره کارت نامعتبر ";
+      if (action.value.length < 16 || !numRegex.test(action.value)) {
+        let temp = Object.assign(state.formErrors, {
+          cardNo: "شماره کارت نامعتبر "
+        });
+        return {
+          ...state,
+          formErrors: temp
+        };
       } else {
-        value = action.value;
+        state.formErrors.cardNo = "";
+        return {
+          ...state,
+          cardNo: action.value
+        };
       }
-      return {
-        ...state,
-        cardNo: value
-      };
     }
 
     case "YEARCHANGE": {
-      let value = "";
-      if (action.value.legth < 2) {
-        state.formErrors.expDate = "تاریخ نامعتبر";
-      }
-      if (!numRegex.test(action.value)) {
-        state.formErrors.expDate = "تاریخ نامعتبر";
+      action.event.preventDefault();
+
+      if (action.value.length < 2 || !numRegex.test(action.value)) {
+        let temp = Object.assign(state.formErrors, {
+          expDate: "تاریخ نامعتبر"
+        });
+        return {
+          ...state,
+          formErrors: temp
+        };
       } else {
-        value = action.value;
+        state.formErrors.expDate = "";
+        return {
+          ...state,
+          expYear: action.value
+        };
       }
-      return {
-        ...state,
-        expYear: value
-      };
     }
 
     case "MONTHCHANGE": {
-      let value = "";
-      let tempMonth = action.value;
+      action.event.preventDefault();
 
-      if (action.value.legth < 2) {
-        state.formErrors.expDate = "تاریخ نامعتبر";
-      }
-      if (!numRegex.test(action.value)) {
-        state.formErrors.expDate = "تاریخ نامعتبر";
-      }
-      if (tempMonth !== "01" || tempMonth !== "12") {
-        state.formErrors.expDate = "تاریخ نامعتبر";
+      if (action.value.length < 2 || !monthRegex.test(action.value)) {
+        let temp = Object.assign(state.formErrors, {
+          expDate: "تاریخ نامعتبر"
+        });
+        return {
+          ...state,
+          formErrors: temp
+        };
       } else {
-        value = action.value;
+        state.formErrors.expDate = "";
+        return {
+          ...state,
+          expMonth: action.value
+        };
       }
-      return {
-        ...state,
-        expMonth: value
-      };
     }
 
     case "EMAILCHANGE": {
-      let value = "";
+      action.event.preventDefault();
+
       if (mailRegex.test(action.value)) {
-        value = action.value;
+        state.formErrors.emailAdd = "";
+        return {
+          ...state,
+          emailAdd: action.value
+        };
       } else {
-        state.formErrors.emailAdd = "آدرس ایمیل نامعتبر";
+        let temp = Object.assign(state.formErrors, {
+          emailAdd: "آدرس ایمیل نامعتبر"
+        });
+        return {
+          ...state,
+          formErrors: temp
+        };
       }
-      return {
-        ...state,
-        emailAdd: value
-      };
     }
 
     case "PASSCHANGE": {
-      let value = "";
-      if (action.value.legth < 5) {
-        state.formErrors.pass = "رمز نامعتبر";
+      action.event.preventDefault();
+
+      if (action.value.length < 5) {
+        let temp = Object.assign(state.formErrors, { pass: "رمز نامعتبر" });
+        return {
+          ...state,
+          formErrors: temp
+        };
       } else {
-        value = action.value;
+        state.formErrors.pass = "";
+        return {
+          ...state,
+          pass: action.value
+        };
       }
-      return {
-        ...state,
-        pass: value
-      };
     }
 
-    case "SECURITYCHANGE": {
-      let value = "";
-      if (action.value.legth < 3) {
-        state.formErrors.cvv2 = "نامعتبرcvv2";
+    case "SECURITYCODECHANGE": {
+      action.event.preventDefault();
+
+      if (action.value.length < 3) {
+        let temp = Object.assign(state.formErrors, { cvv2: "نامعتبرcvv2" });
+        return {
+          ...state,
+          formErrors: temp
+        };
       } else {
-        value = action.value;
+        state.formErrors.cvv2 = "";
+        return {
+          ...state,
+          cvv2: action.value
+        };
       }
-      return {
-        ...state,
-        cvv2: value
-      };
     }
 
-    case "SUBMIT": {
-      return {
-        ...state
-      };
-    }
+    case "SUBMIT":
+      {
+        action.event.preventDefault();
+        if (formValid(state)) {
+          alert("Form successfully submited");
+        } else {
+          alert("Form invalid");
+          console.log(state);
+        }
+      }
+      break;
 
     default:
       return state;
