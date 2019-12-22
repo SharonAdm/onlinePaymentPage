@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 import "../style.css";
 import { connect } from "react-redux";
+import InputMask from 'react-input-mask';
 
 class CardNumber extends Component {
   render() {
     return (
-      <input
+      <InputMask
         className="form-control"
         id="inputCardNumber"
-        maxLength="16"
         name="cardNumber"
+        mask = "9999-9999-9999-9999"
+        maskChar={null}
         placeholder="xxxx - xxxx - xxxx - xxxx"
         type="text"
         onChange={this.props.handleCardNoChange}
         noValidate
-      ></input>
+        required
+      ></InputMask>
     );
   }
 }
