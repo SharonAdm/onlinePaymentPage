@@ -20,6 +20,7 @@ const mailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 const monthRegex = RegExp(/^0[1-9]|1[0-2]$/);
+const cardNoRegex = RegExp(/^[0-9 -]*$/);
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -31,7 +32,7 @@ const formValid = ({ formErrors, ...rest }) => {
   });
 
   Object.values(rest).forEach(val => {
-    if (val === null) {
+    if (val == null) {
       valid = false;
     }
   });
@@ -44,7 +45,7 @@ const reducer = (state = initialState, action) => {
     case "CARDNOCHANGE": {
       action.event.preventDefault();
 
-      if (action.value.length < 16 || !numRegex.test(action.value)) {
+      if (action.value.length < 19 || !cardNoRegex.test(action.value)) {
         let temp = Object.assign(state.formErrors, {
           cardNo: "شماره کارت نامعتبر "
         });
@@ -164,7 +165,6 @@ const reducer = (state = initialState, action) => {
           alert("Form successfully submited");
         } else {
           alert("Form invalid");
-          console.log(state);
         }
       }
       break;

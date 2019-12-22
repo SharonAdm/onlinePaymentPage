@@ -8,9 +8,7 @@ import Password from "./Password";
 import SecurityCode from "./SecurityCode";
 import Date from "./Date";
 
-
 class Card extends Component {
-
   render() {
     return (
       <div className="container">
@@ -21,6 +19,11 @@ class Card extends Component {
             </label>
             <div className="col-sm-10">
               <CardNumber />
+              <div id="errorMessage">
+                {this.props.errors !== undefined
+                  ? this.props.errors.formErrors.cardNo
+                  : ""}
+              </div>
             </div>
 
             <label htmlFor="password" className="col-sm-2 col-form-label">
@@ -28,6 +31,11 @@ class Card extends Component {
             </label>
             <div className="col-sm-10">
               <Password />
+              <div id="errorMessage">
+                {this.props.errors !== undefined
+                  ? this.props.errors.formErrors.pass
+                  : ""}
+              </div>
             </div>
 
             <label htmlFor="securityCode" className="col-sm-2 col-form-label">
@@ -35,6 +43,11 @@ class Card extends Component {
             </label>
             <div className="col-sm-10">
               <SecurityCode />
+              <div id="errorMessage">
+                {this.props.errors !== undefined
+                  ? this.props.errors.formErrors.cvv2
+                  : ""}
+              </div>
             </div>
 
             <label htmlFor="date" className="col-sm-2 col-form-label">
@@ -42,13 +55,23 @@ class Card extends Component {
             </label>
             <div className="col-sm-10">
               <Date />
+              <div id="errorMessage">
+                {this.props.errors !== undefined
+                  ? this.props.errors.formErrors.expDate
+                  : ""}
+              </div>
             </div>
 
             <label htmlFor="email" className="col-sm-2 col-form-label">
-              آدرس ایمیل (انتخابی):
+              آدرس ایمیل:
             </label>
             <div className="col-sm-10">
               <Email />
+              <div id="errorMessage">
+                {this.props.errors !== undefined
+                  ? this.props.errors.formErrors.emailAdd
+                  : ""}
+              </div>
             </div>
 
             <div className="col-lg-10">
@@ -63,11 +86,16 @@ class Card extends Component {
   }
 }
 
-
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    handleSubmit: (event) => dispatch({type: "SUBMIT", event: event })
+    errors: state
   };
 };
 
-export default connect(null, mapDispatchToProps)(Card);
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSubmit: event => dispatch({ type: "SUBMIT", event: event })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
