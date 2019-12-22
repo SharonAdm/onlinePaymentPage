@@ -14,7 +14,7 @@ class Card extends Component {
   render() {
     return (
       <div className="container">
-        <form className="form">
+        <form className="form" onSubmit={this.props.handleSubmit} noValidate>
           <div className="form-group row">
             <label htmlFor="cardNumber" className="col-sm-2 col-form-label">
               شماره کارت:
@@ -63,16 +63,11 @@ class Card extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    formErrors: state.formErrors
-  };
-};
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleSubmit: () => dispatch({type: "SUBMIT"})
+    handleSubmit: (event) => dispatch({type: "SUBMIT", event: event })
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(null, mapDispatchToProps)(Card);
