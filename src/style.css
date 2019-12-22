@@ -18,7 +18,7 @@ body {
   direction: ltr;
 }
 
-#seperator{
+#seperator {
   float: right;
   margin: 4px;
 }
@@ -44,19 +44,30 @@ body {
   direction: ltr;
 }
 
+#errorMessage {
+  color: #FF2E1C;
+  direction: rtl;
+  text-align: right;
+  font-size: small;
+  margin: 4px;
+  font-weight: bold;
+}
+
 ::placeholder {
   text-align: center;
 }
- .container{
-   border: #1d2625 1px solid;
-   border-radius: 25px;
-   background-color: #F7F4F3;
- }
+.container {
+  border: #E5801B 2px solid;
+  border-radius: 30px;
+  background-color: #FFFCF2;
+  margin-top: 150px;
+  padding: 10px;
+}
 
- .App{
-   background-color: #3A506B;
- }
+.App {
+  background-color: #588B8B;
+}
 
- html{
-   background-color: #3A506B;
- }
+html {
+  background-color: #588B8B;
+}
