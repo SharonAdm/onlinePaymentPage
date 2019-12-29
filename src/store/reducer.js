@@ -8,7 +8,8 @@ const initialState = {
 
   formErrors: {
     cardNo: "",
-    expDate: "",
+    expYear: "",
+    expMonth: "",
     pass: "",
     cvv2: "",
     emailAdd: ""
@@ -67,14 +68,14 @@ const reducer = (state = initialState, action) => {
 
       if (action.value.length < 2 || !numRegex.test(action.value)) {
         let temp = Object.assign(state.formErrors, {
-          expDate: "تاریخ نامعتبر"
+          expYear: "سال نامعتبر"
         });
         return {
           ...state,
           formErrors: temp
         };
       } else {
-        state.formErrors.expDate = "";
+        state.formErrors.expYear = "";
         return {
           ...state,
           expYear: action.value
@@ -87,14 +88,14 @@ const reducer = (state = initialState, action) => {
 
       if (action.value.length < 2 || !monthRegex.test(action.value)) {
         let temp = Object.assign(state.formErrors, {
-          expDate: "تاریخ نامعتبر"
+          expMonth: "ماه نامعتبر"
         });
         return {
           ...state,
           formErrors: temp
         };
       } else {
-        state.formErrors.expDate = "";
+        state.formErrors.expMonth = "";
         return {
           ...state,
           expMonth: action.value
