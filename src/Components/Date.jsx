@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 class Date extends Component {
   render() {
     return (
-      <div id="test">
+      <React.Fragment>
         <input
           className="form-control"
           id="inputMonth"
@@ -27,7 +27,7 @@ class Date extends Component {
           onChange={this.props.handleYearChange}
           noValidate
         ></input>
-      </div>
+      </React.Fragment>
     );
   }
 }

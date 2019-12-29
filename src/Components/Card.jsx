@@ -11,9 +11,9 @@ import Date from "./Date";
 class Card extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="wrapper">
         <form className="form" onSubmit={this.props.handleSubmit} noValidate>
-          <div className="form-group row">
+          <div className="form-group row" id="formWrapper">
             <label htmlFor="cardNumber" className="col-sm-2 col-form-label">
               شماره کارت:
             </label>
@@ -51,10 +51,11 @@ class Card extends Component {
             </div>
 
             <label htmlFor="date" className="col-sm-2 col-form-label">
-              تاریخ انقضا کارت:
+              تاریخ انقضا:
             </label>
             <div className="col-sm-10">
               <Date />
+              <br></br>
               <div id="errorMessage">
                 {this.props.errors !== undefined
                   ? this.props.errors.formErrors.expDate
@@ -75,7 +76,7 @@ class Card extends Component {
             </div>
 
             <div className="col-lg-10">
-              <button type="submit" className="btn btn-md btn-success">
+              <button type="submit" id= "submitButton"className="btn btn-md btn-primary btn-block">
                 پرداخت
               </button>
             </div>
