@@ -55,11 +55,16 @@ class Card extends Component {
             </label>
             <div className="col-sm-10">
               <Date />
-              <br></br>
               <div id="errorMessage">
-                {this.props.errors !== undefined
-                  ? this.props.errors.formErrors.expDate
-                  : ""}
+                <p>
+                  {this.props.errors !== undefined
+                    ? this.props.errors.formErrors.expYear
+                    : ""}
+                  <br />
+                  {this.props.errors !== undefined
+                    ? this.props.errors.formErrors.expMonth
+                    : ""}
+                </p>
               </div>
             </div>
 
@@ -76,8 +81,20 @@ class Card extends Component {
             </div>
 
             <div className="col-lg-10">
-              <button type="submit" id= "submitButton"className="btn btn-md btn-primary btn-block">
+              <button
+                type="submit"
+                id="submitButton"
+                className="btn btn-primary btn-block"
+              >
                 پرداخت
+              </button>
+              <button
+                type="reset"
+                id="deleteButton"
+                className="btn btn-secondary btn-block"
+                onClick={this.props.handleDelete}
+              >
+                حذف همه
               </button>
             </div>
           </div>
@@ -95,7 +112,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleSubmit: event => dispatch({ type: "SUBMIT", event: event })
+    handleSubmit: event => dispatch({ type: "SUBMIT", event: event }),
+    handleDelete: event => dispatch({ type: "DELETE", event: event })
   };
 };
 

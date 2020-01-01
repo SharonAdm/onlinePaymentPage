@@ -160,19 +160,42 @@ const reducer = (state = initialState, action) => {
     }
 
     case "SUBMIT":
-      {
-        action.event.preventDefault();
-        if (formValid(state)) {
-          alert("Form successfully submited");
-        } else {
-          alert("Form invalid");
-        }
+      action.event.preventDefault();
+
+      if (formValid(state)) {
+        alert("Form successfully submited");
+      } else {
+        alert("Form invalid");
       }
       break;
+
+    case "DELETE": {
+      action.event.preventDefault();
+      return {
+        ...state,
+        cardNo: null,
+        expYear: null,
+        expMonth: null,
+        pass: null,
+        cvv2: null,
+        emailAdd: null,
+
+        formErrors: {
+          cardNo: "",
+          expYear: "",
+          expMonth: "",
+          pass: "",
+          cvv2: "",
+          emailAdd: ""
+        }
+      };
+      Form;
+    }
 
     default:
       return state;
   }
+  console.log(state);
 };
 
 export default reducer;
