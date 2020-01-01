@@ -189,7 +189,6 @@ const reducer = (state = initialState, action) => {
           emailAdd: ""
         }
       };
-      Form;
     }
 
     default:
