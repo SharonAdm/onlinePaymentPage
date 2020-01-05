@@ -20,9 +20,7 @@ class Card extends Component {
             <div className="col-sm-10">
               <CardNumber />
               <div id="errorMessage">
-                {this.props.errors !== undefined
-                  ? this.props.errors.formErrors.cardNo
-                  : ""}
+                {this.props.errors.formErrors.cardNo}
               </div>
             </div>
 
@@ -32,9 +30,7 @@ class Card extends Component {
             <div className="col-sm-10">
               <Password />
               <div id="errorMessage">
-                {this.props.errors !== undefined
-                  ? this.props.errors.formErrors.pass
-                  : ""}
+                {this.props.errors.formErrors.pass}
               </div>
             </div>
 
@@ -44,9 +40,7 @@ class Card extends Component {
             <div className="col-sm-10">
               <SecurityCode />
               <div id="errorMessage">
-                {this.props.errors !== undefined
-                  ? this.props.errors.formErrors.cvv2
-                  : ""}
+                {this.props.errors.formErrors.cvv2}
               </div>
             </div>
 
@@ -57,13 +51,9 @@ class Card extends Component {
               <Date />
               <div id="errorMessage">
                 <p>
-                  {this.props.errors !== undefined
-                    ? this.props.errors.formErrors.expYear
-                    : ""}
+                  {this.props.errors.formErrors.expYear}
                   <br />
-                  {this.props.errors !== undefined
-                    ? this.props.errors.formErrors.expMonth
-                    : ""}
+                  {this.props.errors.formErrors.expMonth}
                 </p>
               </div>
             </div>
@@ -74,9 +64,7 @@ class Card extends Component {
             <div className="col-sm-10">
               <Email />
               <div id="errorMessage">
-                {this.props.errors !== undefined
-                  ? this.props.errors.formErrors.emailAdd
-                  : ""}
+                {this.props.errors.formErrors.emailAdd}
               </div>
             </div>
 

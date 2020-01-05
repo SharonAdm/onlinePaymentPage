@@ -167,7 +167,24 @@ const reducer = (state = initialState, action) => {
       } else {
         alert("Form invalid");
       }
-      break;
+      return {
+        ...state,
+        cardNo: null,
+        expYear: null,
+        expMonth: null,
+        pass: null,
+        cvv2: null,
+        emailAdd: null,
+
+        formErrors: {
+          cardNo: "",
+          expYear: "",
+          expMonth: "",
+          pass: "",
+          cvv2: "",
+          emailAdd: ""
+        }
+      };
 
     case "DELETE": {
       action.event.preventDefault();
