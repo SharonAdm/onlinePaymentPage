@@ -6,6 +6,7 @@ class Password extends Component {
   render() {
     return (
       <input
+        value={this.props.value.pass}
         className="form-control"
         id="inputPassword"
         minLength="5"
@@ -19,6 +20,12 @@ class Password extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    value: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handlePassChange: event =>
@@ -26,4 +33,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Password);
+export default connect(mapStateToProps, mapDispatchToProps)(Password);

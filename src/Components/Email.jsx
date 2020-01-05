@@ -6,6 +6,7 @@ class Email extends Component {
   render() {
     return (
       <input
+        value={this.props.value.emailAdd}
         className="form-control"
         id="inputEmail"
         name="email"
@@ -18,6 +19,12 @@ class Email extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    value: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handleEmailChange: event =>
@@ -25,4 +32,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Email);
+export default connect(mapStateToProps, mapDispatchToProps)(Email);

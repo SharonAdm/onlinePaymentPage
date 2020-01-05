@@ -169,12 +169,12 @@ const reducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        cardNo: null,
-        expYear: null,
-        expMonth: null,
-        pass: null,
-        cvv2: null,
-        emailAdd: null,
+        cardNo: "",
+        expYear: "",
+        expMonth: "",
+        pass: "",
+        cvv2: "",
+        emailAdd: "",
 
         formErrors: {
           cardNo: "",
@@ -190,12 +190,12 @@ const reducer = (state = initialState, action) => {
       action.event.preventDefault();
       return {
         ...state,
-        cardNo: null,
-        expYear: null,
-        expMonth: null,
-        pass: null,
-        cvv2: null,
-        emailAdd: null,
+        cardNo: "",
+        expYear: "",
+        expMonth: "",
+        pass: "",
+        cvv2: "",
+        emailAdd: "",
 
         formErrors: {
           cardNo: "",

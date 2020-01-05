@@ -6,6 +6,7 @@ class SecurityCode extends Component {
   render() {
     return (
       <input
+        value={this.props.value.cvv2}
         className="form-control"
         id="inputCVV"
         maxLength="4"
@@ -18,6 +19,12 @@ class SecurityCode extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    value: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handleSecurityCodeChange: event =>
@@ -29,4 +36,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(SecurityCode);
+export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode);

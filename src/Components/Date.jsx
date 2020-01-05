@@ -7,6 +7,7 @@ class Date extends Component {
     return (
       <React.Fragment>
         <input
+          value={this.props.value.expMonth}
           className="form-control"
           id="inputMonth"
           maxLength="2"
@@ -18,6 +19,7 @@ class Date extends Component {
         ></input>
         <p id="seperator">_</p>
         <input
+          value={this.props.value.expYear}
           className="form-control"
           id="inputYear"
           maxLength="2"
@@ -32,6 +34,12 @@ class Date extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    value: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handleYearChange: event =>
@@ -41,4 +49,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Date);
+export default connect(mapStateToProps, mapDispatchToProps)(Date);
