@@ -1,10 +1,10 @@
 const initialState = {
-  cardNo: null,
-  expYear: null,
-  expMonth: null,
-  pass: null,
-  cvv2: null,
-  emailAdd: null,
+  cardNo: undefined,
+  expYear: undefined,
+  expMonth: undefined,
+  pass: undefined,
+  cvv2: undefined,
+  emailAdd: undefined,
 
   formErrors: {
     cardNo: "",
@@ -33,7 +33,7 @@ const formValid = ({ formErrors, ...rest }) => {
   });
 
   Object.values(rest).forEach(val => {
-    if (val == null) {
+    if (val.length === 0) {
       valid = false;
     }
   });
